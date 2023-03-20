@@ -1,2 +1,4 @@
-package domain;public record Coordinate() {
+package domain;
+
+public record Coordinate(int x, int y) {
 }

@@ -1,2 +1,6 @@
-package domain;public class Heading {
+package domain;
+
+public enum Heading {
+    WEST, SOUTH, NORTH
 }
+

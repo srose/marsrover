@@ -9,19 +9,15 @@ public class RoverTest {
     @Test
     public void rover_starting_north_turn_left_heading_west() {
 
-        CardinalDirection startCoordinate = CardinalDirection.NORTH;
-
         Heading headingStub = Mockito.mock(Heading.class);
-        Mockito.when(headingStub.turnLeft(CardinalDirection.NORTH)).
-                thenReturn(CardinalDirection.WEST);
+        Mockito.when(headingStub.turnLeft(CardinalDirection.NORTH))
+                .thenReturn(CardinalDirection.WEST);
 
-        var rover = new Rover(startCoordinate, headingStub);
+        var rover = new Rover(CardinalDirection.NORTH, headingStub);
 
         rover.turnLeft();
 
-        var heading = rover.getDirection();
-
-        Assertions.assertThat(heading)
+        Assertions.assertThat(rover.getDirection())
                 .isEqualTo(CardinalDirection.WEST);
     }
 

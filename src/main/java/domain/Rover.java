@@ -14,6 +14,6 @@ public class Rover {
     }
 
     public Heading getHeading() {
-        return Heading.SOUTH;
+        return Heading.turnLeft(Heading.turnRight(Heading.turnLeft(Heading.turnLeft(Heading.NORTH))));
     }
 }

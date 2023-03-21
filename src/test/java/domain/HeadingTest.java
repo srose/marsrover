@@ -8,11 +8,10 @@ public class HeadingTest {
 
     @Test
     void starting_turning_right_is_correct() {
-        var heading = new Heading(CardinalDirection.NORTH);
+        var heading = new Heading();
 
-        heading.turnRight();
+        var direction = heading.turnRight(CardinalDirection.NORTH);
 
-        var direction = heading.getDirection();
         assertThat(direction).isEqualTo(CardinalDirection.EAST);
 
     }

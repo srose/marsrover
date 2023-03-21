@@ -1,14 +1,9 @@
 package domain;
 
 public class Heading {
-    private CardinalDirection direction;
 
-    public Heading(CardinalDirection direction) {
-        this.direction = direction;
-    }
-
-    public void turnRight() {
-        this.direction = switch (this.direction) {
+    public CardinalDirection turnRight(CardinalDirection direction) {
+        return switch (direction) {
             case NORTH -> CardinalDirection.EAST;
             case SOUTH -> CardinalDirection.WEST;
             case WEST -> CardinalDirection.NORTH;
@@ -16,12 +11,8 @@ public class Heading {
         };
     }
 
-    public CardinalDirection getDirection() {
-        return direction;
-    }
-
-    public void turnLeft() {
-        this.direction = switch (this.direction) {
+    public CardinalDirection turnLeft(CardinalDirection direction) {
+        return switch (direction) {
             case NORTH -> CardinalDirection.WEST;
             case SOUTH -> CardinalDirection.EAST;
             case WEST -> CardinalDirection.SOUTH;

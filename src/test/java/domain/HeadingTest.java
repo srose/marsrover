@@ -1,6 +1,5 @@
 package domain;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,13 +14,7 @@ public class HeadingTest {
     @ParameterizedTest()
     @MethodSource("cardinalDirectionCombinationsTurnRight")
     void starting_turning_right_is_correct(CardinalDirection starting, CardinalDirection result) {
-        var heading = new Heading(starting);
-
-        heading.turnRight();
-
-        var direction = heading.getDirection();
-
-        assertThat(direction).isEqualTo(result);
+        assertThat(new Heading().turnRight(starting)).isEqualTo(result);
     }
 
     private static Stream<Arguments> cardinalDirectionCombinationsTurnRight() {
@@ -36,13 +29,7 @@ public class HeadingTest {
     @ParameterizedTest()
     @MethodSource("cardinalDirectionCombinationsTurnLeft")
     void starting_turning_left_is_correct(CardinalDirection starting, CardinalDirection result) {
-        var heading = new Heading(starting);
-
-        heading.turnLeft();
-
-        var direction = heading.getDirection();
-
-        assertThat(direction).isEqualTo(result);
+        assertThat(new Heading().turnLeft(starting)).isEqualTo(result);
     }
 
     private static Stream<Arguments> cardinalDirectionCombinationsTurnLeft() {
